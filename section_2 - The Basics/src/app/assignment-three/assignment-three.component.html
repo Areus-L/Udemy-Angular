@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onToggleVisibility()"
+      >Display Details</button>
+      <p *ngIf="visibility">Laciface is hungry</p>
+      <p
+        *ngFor="let click of clicks"
+        [ngStyle]="{backgroundColor: click > 4 ? 'blue' : 'white'}"
+        [ngClass]="{fontColor: click > 4 }"
+        >{{click}}</p>
+    </div>
+  </div>
+</div>
