@@ -1,17 +1,25 @@
 <label for="server">Server Name</label>
+<!-- two way binding -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<!-- event binding with $event -->
 <input
     type="text"
     class="form-control"
     (input)="onUpdateServerName($event)">
 <p>{{ serverName }}</p>
+<!-- event binding -->
 <button
     class="btn btn-primary"
     [disabled]="!allowNewServer"
     (click)="onCreateServer()">Add Server</button>
 <!-- string interpolation -->
-<!-- <p>{{ allowNewServer }}</p> -->
+<p>{{ allowNewServer }}</p>
 <!-- property binding -->
-<!-- <p [innerText]="allowNewServer"></p> -->
+<p [innerText]="allowNewServer"></p>
 <p>{{serverCreationStatus}}</p>
 <app-server></app-server>
 <app-server></app-server>
