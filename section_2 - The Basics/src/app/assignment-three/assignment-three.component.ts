@@ -12,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentThreeComponent implements OnInit {
   visibility = true;
-  clicks = [0];
+  //clicks = [] as any;
+  clicks:any[] = [];
 
   constructor() { }
 
@@ -20,7 +21,8 @@ export class AssignmentThreeComponent implements OnInit {
   }
 
   onToggleVisibility(){
-    this.clicks.push(this.clicks[this.clicks.length - 1] + 1);
+    //this.clicks.push(this.clicks[this.clicks.length - 1] + 1);
+    this.clicks.push(new Date);
     this.visibility = !this.visibility;
   }
 }

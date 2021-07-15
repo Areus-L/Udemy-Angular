@@ -7,9 +7,9 @@
       >Display Details</button>
       <p *ngIf="visibility">Laciface is hungry</p>
       <p
-        *ngFor="let click of clicks"
-        [ngStyle]="{backgroundColor: click > 4 ? 'blue' : 'white'}"
-        [ngClass]="{fontColor: click > 4 }"
+        *ngFor="let click of clicks; let i = index"
+        [ngStyle]="{backgroundColor: i > 3 ? 'blue' : 'white'}"
+        [ngClass]="{fontColor: i > 3 }"
         >{{click}}</p>
     </div>
   </div>
