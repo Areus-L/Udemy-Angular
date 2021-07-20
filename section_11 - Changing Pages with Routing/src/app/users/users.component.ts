@@ -7,11 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-
-  constructor(
-    private route: ActivatedRoute,
-    ) { }
-    
   users = [
     {
       id: 1,
