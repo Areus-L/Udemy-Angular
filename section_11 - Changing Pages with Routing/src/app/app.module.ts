@@ -18,6 +18,7 @@ import { AuthGuard } from './auth-guard.service';
 import { AtuhService } from './auth.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 
 
@@ -38,7 +39,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     FormsModule,
     ApproutingModule
   ],
-  providers: [ServersService, AuthGuard, AtuhService, CanDeactivateGuard],
+  providers: [ServersService, AuthGuard, AtuhService, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
