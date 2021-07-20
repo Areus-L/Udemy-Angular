@@ -9,6 +9,7 @@ import { ServersService } from './servers/servers.service';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth-guard.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent}, //localhost:4200/
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
     component: ServersComponent,
     children: [
     { path: ':id', component: ServerComponent}, //localhost:4200/servers/3
-    { path: ':id/edit', component: EditServerComponent} //localhost:4200/servers/2/edit
+    { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard  ]} //localhost:4200/servers/2/edit
   ]},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'} //have to be the last row
